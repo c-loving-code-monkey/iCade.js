@@ -14,31 +14,11 @@
 <meta http-equiv="pragma" content="no-cache" />
 <meta charset="utf-8" />
 <script src="iCade.min.js"></script>
+<script src="break-it.js"></script>
 </head>
 <body>
 <script>
-function drawBall(b) {
-    iCade.screen.fillStyle = "yellow";
-    iCade.screen.arc(b.x + b.w/2, b.y + b.h/2, b.w/2, 0, Math.PI * 2);
-    iCade.screen.fill();
-}
-function drawBat(b) {
-    iCade.screen.fillStyle = "yellow";
-    iCade.screen.fillRect(b.x, b.y, b.w, b.h);
-    iCade.screen.fillStyle = "gold";
-    iCade.screen.fillRect(b.x, b.y + b.h/2, b.w, b.h / 2);
-}
-
-let ball = {x: 64, y: 700, w: 32, h: 32 },
-    bat = {x: 64, y: 1300, w: 192, h: 32 };
-
-iCade.load(function() {
-    iCade.screen.fillStyle = "black";
-    iCade.screen.fillRect(0, 0, iCade.width, iCade.height);
-    drawBat(bat);
-    drawBall(ball);
-    if (iCade.right) bat.x += 2;
-});
+iCade.load(loop);
 </script>
 </body>
 </html>

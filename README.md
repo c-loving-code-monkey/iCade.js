@@ -4,8 +4,8 @@ This is exactly what it sounds like: a JavaScript library for building games for
 
 ## TO-DO LIST:
 
-* Set up drawing functions for the score, ball count, ball, walls, bricks and bat
-* Set up the bat so it moves how the player wants
+* Set up functions for drawing 2-3 different color bricks
+* Add a speed variable - this is the kind of game that gets faster as it goes on.  Just apply it to player movement for now.
 * Set up collision detection and get the ball bouncing off stuff
 * Set up the scoring - let the ball destroy the bricks etc.
 * Set up the Game Over scenario (all 3 balls hit the bottom)
