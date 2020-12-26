@@ -17,33 +17,27 @@
 </head>
 <body>
 <script>
+function drawBall(b) {
+    iCade.screen.fillStyle = "yellow";
+    iCade.screen.arc(b.x + b.w/2, b.y + b.h/2, b.w/2, 0, Math.PI * 2);
+    iCade.screen.fill();
+}
+function drawBat(b) {
+    iCade.screen.fillStyle = "yellow";
+    iCade.screen.fillRect(b.x, b.y, b.w, b.h);
+    iCade.screen.fillStyle = "gold";
+    iCade.screen.fillRect(b.x, b.y + b.h/2, b.w, b.h / 2);
+}
+
+let ball = {x: 64, y: 700, w: 32, h: 32 },
+    bat = {x: 64, y: 1300, w: 192, h: 32 };
+
 iCade.load(function() {
-    if (iCade.up)
-        iCade.screen.fillStyle = "yellow";
-    else if (iCade.down)
-        iCade.screen.fillStyle = "green";
-    else if (iCade.left)
-        iCade.screen.fillStyle = "blue";
-    else if (iCade.right)
-        iCade.screen.fillStyle = "red";
-    else if (iCade.b1)
-        iCade.screen.fillStyle = "white";
-    else if (iCade.b2)
-        iCade.screen.fillStyle = "gray";
-    else if (iCade.b3)
-        iCade.screen.fillStyle = "purple";
-    else if (iCade.b4)
-        iCade.screen.fillStyle = "cyan";
-    else if (iCade.b5)
-        iCade.screen.fillStyle = "magenta";
-    else if (iCade.b6)
-        iCade.screen.fillStyle = "silver";
-    else if (iCade.b7)
-        iCade.screen.fillStyle = "orange";
-    else if (iCade.b8)
-        iCade.screen.fillStyle = "teal";
-    else iCade.screen.fillStyle = "black";
+    iCade.screen.fillStyle = "black";
     iCade.screen.fillRect(0, 0, iCade.width, iCade.height);
+    drawBat(bat);
+    drawBall(ball);
+    if (iCade.right) bat.x += 2;
 });
 </script>
 </body>
